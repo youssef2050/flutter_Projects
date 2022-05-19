@@ -20,7 +20,11 @@ String printList() {
     CityClass(id: 2, name: 'Rafh', postCode: '00970'),
     CityClass(id: 3, name: 'Rafh', postCode: '00970'),
   ];
-
+  List<CityClass> listOfCitesVisits2 = [
+    CityClass(id: 2, name: 'Rafh', postCode: '00970'),
+    CityClass(id: 3, name: 'Rafh', postCode: '00970'),
+    CityClass(id: 5, name: 'Rafh', postCode: '00970'),
+  ];
   List<PersonClass> persons = [
     PersonClass(
         id: 1,
@@ -39,7 +43,7 @@ String printList() {
         name: "name",
         address: "address",
         gender: GenderEnum.male,
-        visits: listOfCitesVisits),
+        visits: listOfCitesVisits2),
     PersonClass(
         id: 4,
         name: "name",
@@ -51,13 +55,13 @@ String printList() {
         name: "name",
         address: "address",
         gender: GenderEnum.male,
-        visits: listOfCitesVisits),
+        visits: listOfCitesVisits2),
   ];
   int x = 0;
   for (PersonClass person in persons) {
     person.city = listOfCites[x];
     x++;
-    result += person.toString() + '\n';
+    if (person.visits.length <= 2) result += person.toString() + '\n';
   }
 
   return result;
