@@ -65,10 +65,13 @@ String printList() {
             .toList()),
   ];
   int x = 0;
-  for (PersonClass person in persons) {
+  List<PersonClass> personsVisitas = persons
+      .where((PersonClass personClass) => personClass.visits.length <= 2)
+      .toList();
+  for (PersonClass person in personsVisitas) {
     person.city = listOfCites[x];
     x++;
-    if (person.visits.length <= 2) result += person.toString() + '\n';
+    result += person.toString() + '\n';
   }
 
   return result;
