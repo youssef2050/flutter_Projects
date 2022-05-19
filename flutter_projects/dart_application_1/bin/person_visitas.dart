@@ -1,6 +1,3 @@
-import 'package:dart_application_1/dart_application_1.dart'
-    as dart_application_1;
-
 import 'calss/city_class.dart';
 import 'calss/person_class.dart';
 import 'eunm/gender_eunm.dart';
