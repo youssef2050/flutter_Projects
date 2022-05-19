@@ -68,6 +68,7 @@ String printList() {
   List<PersonClass> personsVisitas = persons
       .where((PersonClass personClass) => personClass.visits.length <= 2)
       .toList();
+
   for (PersonClass person in personsVisitas) {
     person.city = listOfCites[x];
     x++;
