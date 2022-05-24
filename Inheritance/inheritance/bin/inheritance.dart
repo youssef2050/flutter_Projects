@@ -43,6 +43,10 @@ void main(List<String> arguments) {
     city: city,
     specialization: specialization,
   );
-  print(teacher.specizliation());
-  print(student.specizliation());
+  print(teacher.getspecizliationTitle());
+  print(student.getspecizliationTitle());
+  print(teacher.getPersonName());
+  print(student.getPersonName());
+  print(student.getPersonData());
+  print(teacher.getPersonData());
 }

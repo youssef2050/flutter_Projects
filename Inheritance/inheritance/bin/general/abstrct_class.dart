@@ -1,3 +1,5 @@
 abstract class Method {
-  String specizliation();
+  String getspecizliationTitle();
+  String getPersonName();
+  String getPersonData();
 }

@@ -23,7 +23,20 @@ class StudentClass extends PersonClass implements Method {
   late final SpecializationClass specialization;
   late final int studentNumber;
   @override
-  String specizliation() {
-    return 'تخصص الطالب : $specialization.title';
+  String getspecizliationTitle() {
+    return 'تخصص الطالب : ${specialization.title}';
+  }
+
+  @override
+  String getPersonName() {
+    return 'الطالب / $name';
+  }
+
+  @override
+  String getPersonData() {
+    if (gender.name == Gender.female.name) {
+      return 'الطالبة : $name من مدينة ${city.title} وجنسها ${gender.name}';
+    }
+    return 'الطالب : $name من مدينة ${city.title} وجنسه ${gender.name}';
   }
 }

@@ -32,7 +32,20 @@ class TeacherClass extends PersonClass implements Method {
   late final DepartmentClass deparment;
 
   @override
-  String specizliation() {
-    return 'تخصص المدرس : $specialization.title';
+  String getspecizliationTitle() {
+    return 'تخصص المدرس : ${specialization.title}';
+  }
+
+  @override
+  String getPersonName() {
+    return 'الاستاذ / $name';
+  }
+
+  @override
+  String getPersonData() {
+    if (gender.name == Gender.female.name) {
+      return 'الاستاذة : $name من مدينة ${city.title} وجنسها ${gender.name}';
+    }
+    return 'الاستاذ : $name من مدينة ${city.title} وجنسه ${gender.name}';
   }
 }
