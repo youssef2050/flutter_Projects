@@ -1,0 +1,4 @@
+enum Audience {
+  present,
+  absent,
+}

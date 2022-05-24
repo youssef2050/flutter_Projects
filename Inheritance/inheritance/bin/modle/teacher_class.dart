@@ -43,9 +43,21 @@ class TeacherClass extends PersonClass implements Method {
 
   @override
   String getPersonData() {
-    if (gender.name == Gender.female.name) {
+    if (isFelmale()) {
       return 'الاستاذة : $name من مدينة ${city.title} وجنسها ${gender.name}';
     }
     return 'الاستاذ : $name من مدينة ${city.title} وجنسه ${gender.name}';
+  }
+
+  bool isFelmale() {
+    return gender.name == Gender.female.name;
+  }
+
+  @override
+  String getPersonFullData() {
+    if (isFelmale()) {
+      return 'الاستاذة : $name / $address  ${audience?.name}';
+    }
+    return 'الاستاذ : $name / $address ${audience?.name}';
   }
 }
