@@ -18,7 +18,7 @@ class PersonClass {
   late final Gender gender;
   late final CityClass city;
   late final List<CityClass>? visitedCites;
-  late final Audience? audience;
+  late Audience? audience;
 
 
 }
