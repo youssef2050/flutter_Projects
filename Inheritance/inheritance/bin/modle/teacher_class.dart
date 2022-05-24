@@ -1,11 +1,12 @@
-import 'package:test/test.dart';
-
+import '../general/abstrct_class.dart';
 import '../general/status_enum.dart';
 import 'city_class.dart';
 import '../general/gender_enum.dart';
+import 'department_class.dart';
 import 'person_class.dart';
+import 'specialization_class.dart';
 
-class TeacherClass extends PersonClass {
+class TeacherClass extends PersonClass implements Method {
   TeacherClass({
     required int id,
     required String name,
@@ -15,6 +16,8 @@ class TeacherClass extends PersonClass {
     required this.salary,
     required this.children,
     required this.status,
+    required this.specialization,
+    required this.deparment,
   }) : super(
           id: id,
           name: name,
@@ -25,4 +28,11 @@ class TeacherClass extends PersonClass {
   late final double salary;
   late final int children;
   late final Status status;
+  late final SpecializationClass specialization;
+  late final DepartmentClass deparment;
+
+  @override
+  String specizliation() {
+    return 'تخصص المدرس : $specialization.title';
+  }
 }
