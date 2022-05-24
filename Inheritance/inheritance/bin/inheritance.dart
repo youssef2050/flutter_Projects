@@ -1,3 +1,4 @@
+import 'general/audience_enum.dart';
 import 'general/gender_enum.dart';
 import 'general/status_enum.dart';
 import 'modle/city_class.dart';
@@ -43,10 +44,15 @@ void main(List<String> arguments) {
     city: city,
     specialization: specialization,
   );
+
+  teacher.audience = Audience.present;
+  student.audience = Audience.absent;
   print(teacher.getspecizliationTitle());
   print(student.getspecizliationTitle());
   print(teacher.getPersonName());
   print(student.getPersonName());
   print(student.getPersonData());
   print(teacher.getPersonData());
+  print(student.getPersonFullData());
+  print(teacher.getPersonFullData());
 }

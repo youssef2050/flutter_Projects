@@ -20,5 +20,5 @@ class PersonClass {
   late final List<CityClass>? visitedCites;
   late final Audience? audience;
 
-  get
+
 }
