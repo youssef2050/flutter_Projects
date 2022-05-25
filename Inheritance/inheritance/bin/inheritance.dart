@@ -1,6 +1,7 @@
 import 'general/audience_enum.dart';
 import 'general/gender_enum.dart';
 import 'general/status_enum.dart';
+import 'modle/audience_class.dart';
 import 'modle/city_class.dart';
 import 'modle/department_class.dart';
 import 'modle/specialization_class.dart';
@@ -44,9 +45,16 @@ void main(List<String> arguments) {
     city: city,
     specialization: specialization,
   );
-
-  teacher.audience = Audience.present;
-  student.audience = Audience.absent;
+  student.addAudiece(AudienceClass(
+    id: 1,
+    audience: Audience.present,
+    dateTime: DateTime.now(),
+  ));
+  teacher.addAudiece(AudienceClass(
+    id: 1,
+    audience: Audience.absent,
+    dateTime: DateTime.now(),
+  ));
   print(teacher.getspecizliationTitle());
   print(student.getspecizliationTitle());
   print(teacher.getPersonName());

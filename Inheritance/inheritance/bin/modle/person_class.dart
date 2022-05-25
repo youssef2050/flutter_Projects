@@ -1,5 +1,5 @@
-import '../general/audience_enum.dart';
 import '../general/gender_enum.dart';
+import 'audience_class.dart';
 import 'city_class.dart';
 
 class PersonClass {
@@ -9,7 +9,6 @@ class PersonClass {
     required this.address,
     required this.gender,
     required this.city,
-    this.audience,
     this.visitedCites,
   });
   late final int id;
@@ -18,7 +17,19 @@ class PersonClass {
   late final Gender gender;
   late final CityClass city;
   late final List<CityClass>? visitedCites;
-  late Audience? audience;
+  late final List<AudienceClass> audience = [];
 
+  bool addAudiece(AudienceClass audienceClass) {
+    int size = audience.length;
+    audience.add(audienceClass);
+    return ((audience.length) > size);
+  }
 
+  String displayAudiece() {
+    String result = '';
+    audience.forEach((AudienceClass audience) {
+      result += audience.toString();
+    });
+    return result;
+  }
 }

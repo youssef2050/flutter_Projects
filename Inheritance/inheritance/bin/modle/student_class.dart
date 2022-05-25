@@ -46,10 +46,9 @@ class StudentClass extends PersonClass implements Method {
 
   @override
   String getPersonFullData() {
-     if (isFelmale()) {
-      return 'الطالبة : $name / $address  ${audience?.name}';
+    if (isFelmale()) {
+      return 'الطالبة : $name / $address  ${displayAudiece()}';
     }
-    return 'الطالب : $name / $address ${audience?.name}';
-
+    return 'الطالب : $name / $address ${displayAudiece()}';
   }
 }
