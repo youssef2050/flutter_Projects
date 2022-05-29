@@ -55,6 +55,7 @@ void main(List<String> arguments) {
     audience: Audience.absent,
     dateTime: DateTime.now(),
   ));
+
   print(teacher.getspecizliationTitle());
   print(student.getspecizliationTitle());
   print(teacher.getPersonName());
