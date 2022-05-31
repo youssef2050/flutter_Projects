@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:menu_project/pages/first_page.dart';
+import 'package:menu_project/widgets/my_drawer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,11 +44,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const MyDrawer(),
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.menu),
-        ),
         title: Text(widget.title),
         actions: [
           FloatingActionButton(
@@ -66,8 +66,17 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            InkWell(
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text(
+                  'You have pushed the button this many times:',
+                ),
+              ),
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (_) => const FirstPage()));
+              },
             ),
             Text(
               '$_counter',
