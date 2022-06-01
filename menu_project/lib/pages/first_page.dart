@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menu_project/pages/secand_page.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({Key? key}) : super(key: key);
@@ -9,11 +10,19 @@ class FirstPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('test'),
       ),
-      body: Column(
-        children: <Widget>[
-          const Text('youssef ezzeldeen'),
-          const Text("data"),
-        ],
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            InkWell(
+              child: Text('youssef ezzeldeen'),
+              onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const SecandPage()));
+              },
+            ),
+            const Text("data"),
+          ],
+        ),
       ),
     );
   }

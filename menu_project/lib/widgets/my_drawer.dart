@@ -12,7 +12,7 @@ class MyDrawer extends StatelessWidget {
       
         padding: EdgeInsets.zero,
         children: [
-          box
+          SizedBox(height: 80,),
           ListTile(
             title: const Text('Item 1'),
             leading: const Icon(Icons.login),
