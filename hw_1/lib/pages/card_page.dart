@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_projects/pages/card_page.dart';
 
-class PaymentPage extends StatelessWidget {
-  const PaymentPage({Key? key}) : super(key: key);
+class CardsPage extends StatelessWidget {
+  const CardsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,119 +37,7 @@ class PaymentPage extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: Row(
-              children: [
-                Container(
-                  decoration: const BoxDecoration(
-                    color: Color(0xC2CDCDD9),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(16.0),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            FloatingActionButton(
-                              onPressed: () {},
-                              child: Image.asset('assets/images/paypal.png'),
-                              mini: true,
-                              backgroundColor: Colors.white,
-                            ),
-                            const Text(
-                              'Paypal Income',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 18,
-                              ),
-                            ),
-                            const Text(
-                              '\$1,260.28',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          width: 30,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: Color(0xC2CDCDD9),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(16.0),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Row(
-                      children: [
-                        Column(
-                          children: [
-                            FloatingActionButton(
-                              onPressed: () {},
-                              child: Image.asset('assets/images/amazon.png'),
-                              mini: true,
-                              backgroundColor: Colors.white,
-                            ),
-                            const Text(
-                              'Paypal Income',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 18,
-                              ),
-                            ),
-                            const Text(
-                              '\$1,260.28',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          width: 30,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          ListTile(
-            title: const Text('Super Card'),
-            trailing: const Icon(
-              Icons.arrow_right,
-              color: Colors.grey,
-            ),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const CardsPage(),
-                ),
-              );
-            },
-          ),
-          Row(
+          Column(
             children: [
               Padding(
                 padding: const EdgeInsets.all(24.0),
@@ -250,16 +136,6 @@ class PaymentPage extends StatelessWidget {
                 ),
               ),
             ],
-          ),
-          const ListTile(
-            title: Text('Super ATM'),
-            trailing: Icon(
-              Icons.arrow_right,
-              color: Colors.grey,
-            ),
-          ),
-          Image.asset(
-            'assets/images/map.png',
           ),
         ],
       ),
