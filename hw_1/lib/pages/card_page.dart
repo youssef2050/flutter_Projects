@@ -40,7 +40,7 @@ class CardsPage extends StatelessWidget {
           Column(
             children: [
               Padding(
-                padding: const EdgeInsets.all(24.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Container(
                   height: 150,
                   width: 320,
@@ -88,7 +88,55 @@ class CardsPage extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(24.0),
+                padding: const EdgeInsets.all(16.0),
+                child: Container(
+                  height: 150,
+                  width: 320,
+                  decoration: const BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(16.0),
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            Image.asset('assets/images/visa.png', height: 40),
+                            const SizedBox(
+                              width: 220,
+                            ),
+                            const Text(
+                              "08/28",
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const Text(
+                        '\$1,260.28',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Text(
+                        '****\t\t****\t\t****\t\t7735',
+                        style: TextStyle(color: Colors.white, fontSize: 24),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
                 child: Container(
                   height: 150,
                   width: 320,
