@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'splash_screeen.dart';
+
 class CardsPage extends StatelessWidget {
   const CardsPage({Key? key}) : super(key: key);
 
@@ -183,6 +185,35 @@ class CardsPage extends StatelessWidget {
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Color(0xFFFFFFFF),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SplashScreen(),
+                      ),
+                    );
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(
+                        Icons.add,
+                        color: Colors.black,
+                      ),
+                      Text(
+                        'Add Card',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ],
