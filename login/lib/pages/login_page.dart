@@ -12,6 +12,9 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController passwordTextEditingController = TextEditingController();
   bool _isUsernameEmpty = false;
   bool _isPasswordEmpty = false;
+  bool _isvisible = true;
+  Widget icon = Icon(Icons.visibility);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,9 +59,24 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 controller: passwordTextEditingController,
                 keyboardType: TextInputType.visiblePassword,
-                obscureText: true,
+                obscureText: _isvisible,
                 autofocus: true,
-                decoration: getTextFiledDecoration(title: 'passowrd'),
+                decoration: getTextFiledDecoration(
+                  title: "passowrd",
+                  suffix: IconButton(
+                    icon: icon,
+                    onPressed: () {
+                      if (_isvisible) {
+                        _isvisible = false;
+                        icon = const Icon(Icons.visibility_off);
+                      } else {
+                        _isvisible = true;
+                        icon = const Icon(Icons.visibility);
+                      }
+                      setState(() {});
+                    },
+                  ),
+                ),
               ),
               if (_isPasswordEmpty)
                 const Text(
@@ -90,11 +108,12 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   InputDecoration getTextFiledDecoration(
-      {required String title, Widget? prefix}) {
+      {required String title, Widget? prefix, Widget? suffix}) {
     return InputDecoration(
       fillColor: const Color.fromARGB(15, 255, 7, 7),
       label: Text(title),
-      prefix: prefix,
+      prefixIcon: prefix,
+      suffixIcon: suffix,
       border: const OutlineInputBorder(
         borderRadius: BorderRadius.all(
           Radius.circular(8),
