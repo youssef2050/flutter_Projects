@@ -8,6 +8,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController usernameTextEditingController = TextEditingController();
+  TextEditingController passwordTextEditingController = TextEditingController();
+  bool _isUsernameEmpty = false;
+  bool _isPasswordEmpty = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +25,12 @@ class _LoginPageState extends State<LoginPage> {
           Column(
             children: [
               TextField(
+                onChanged: (value) {
+                  _isUsernameEmpty =
+                      valid(text: usernameTextEditingController.text);
+                  setState(() {});
+                },
+                controller: usernameTextEditingController,
                 keyboardType: TextInputType.emailAddress,
                 autofocus: true,
                 decoration: getTextFiledDecoration(
@@ -28,21 +38,49 @@ class _LoginPageState extends State<LoginPage> {
                   prefix: const Icon(Icons.account_circle),
                 ),
               ),
-              SizedBox(
+              if (_isUsernameEmpty)
+                const Text(
+                  'Enter username please!',
+                  style: TextStyle(
+                    color: Colors.red,
+                  ),
+                ),
+              const SizedBox(
                 height: 8,
               ),
               TextField(
+                onChanged: (value) {
+                  _isPasswordEmpty =
+                      valid(text: passwordTextEditingController.text);
+                  setState(() {});
+                },
+                controller: passwordTextEditingController,
                 keyboardType: TextInputType.visiblePassword,
                 obscureText: true,
                 autofocus: true,
                 decoration: getTextFiledDecoration(title: 'passowrd'),
               ),
-              SizedBox(
+              if (_isPasswordEmpty)
+                const Text(
+                  'Enter password please!',
+                  style: TextStyle(
+                    color: Colors.red,
+                  ),
+                ),
+              const SizedBox(
                 height: 8,
               ),
               ElevatedButton(
-                onPressed: () {},
-                child: Text('Login'),
+                onPressed: () {
+                  _isUsernameEmpty = valid(
+                    text: usernameTextEditingController.text,
+                  );
+                  _isPasswordEmpty = valid(
+                    text: passwordTextEditingController.text,
+                  );
+                  setState(() {});
+                },
+                child: const Text('Login'),
               ),
             ],
           )
@@ -63,5 +101,9 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  bool valid({required String text}) {
+    return text.trim().isEmpty;
   }
 }
