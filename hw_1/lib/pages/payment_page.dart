@@ -194,7 +194,7 @@ class PaymentPage extends StatelessWidget {
                         height: 20,
                       ),
                       const Text(
-                        '****\t\t****\t\t****\t\t7735',
+                        '****    ****   ****   7735',
                         style: TextStyle(color: Colors.white, fontSize: 24),
                       ),
                     ],
