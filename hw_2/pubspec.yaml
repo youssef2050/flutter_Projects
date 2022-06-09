@@ -28,6 +28,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   badges: ^2.0.3
+  flutter_rating_bar: ^4.0.1
   flutter:
     sdk: flutter
 
