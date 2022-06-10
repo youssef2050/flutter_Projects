@@ -14,8 +14,11 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8.0),
+      ),
       child: InkWell(
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(8),
         onTap: () {},
         child: Padding(
           padding: const EdgeInsets.all(12.0),
@@ -24,7 +27,8 @@ class CategoryItem extends StatelessWidget {
               icon,
               const SizedBox(width: 12),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(title),
                   Text(subTitle),
